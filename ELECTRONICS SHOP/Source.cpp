@@ -14,7 +14,7 @@ int main() {
 	cout << "Elemente de programare folosite in cadrul acestui program prototip:" << endl;
 	cout << "Clase, Dynamic_Cast, Exceptii, Factory Design Pattern, STL" << endl << endl;
 	Magazin shop(4);
-	ProdusFactory f;
+	ProdusFactory* f=new ProdusFactory;
 	char op;
 		do {
 			cout << "A - Adauga produs" << endl;
@@ -26,7 +26,7 @@ int main() {
 			cin >> op; op = toupper(op);
 			try {
 				switch (op) {
-				case 'A':shop.adaugaProdus(f.citesteProdus());
+				case 'A':shop.adaugaProdus(f->citesteProdus());
 					break;
 				case 'E':cout << "Introduceti ID-ul produsului de eliminat: ";
 						int id; cin >> id;
@@ -48,5 +48,6 @@ int main() {
 				cout << "Produs inexistent!" << endl;
 			}
 		} while (op != 'Q');
+	delete f;
 	return 0;
 }
