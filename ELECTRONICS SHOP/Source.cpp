@@ -27,17 +27,20 @@ int main() {
 			try {
 				switch (op) {
 				case 'A':shop.adaugaProdus(f->citesteProdus());
-					break;
+					 break;
 				case 'E':cout << "Introduceti ID-ul produsului de eliminat: ";
-						int id; cin >> id;
-						shop.eliminaProdus(id);break;
+					 int id; cin >> id;
+					 shop.eliminaProdus(id);
+					 break;
 				case 'C':cout << "Introduceti ID-ul produsului cautat: "; cin >> id;
-						if (shop.cautaProdus(id))shop.cautaProdus(id)->info();
-						break;
+					 if (shop.cautaProdus(id))shop.cautaProdus(id)->info();
+					 break;
 				case 'N':cout <<"In magazin sunt "<< shop.numaraMasiniDeSpalat() << " masini de spalat!" << endl;
-						break;
-				case 'L':shop.scrieProduse(); break;
-				case 'Q':cout << "La revedere!" << endl; break;
+					 break;
+				case 'L':shop.scrieProduse();
+					 break;
+				case 'Q':cout << "La revedere!" << endl;
+					 break;
 				default:cout << "Comanda invalida!" << endl;
 				}
 			}
